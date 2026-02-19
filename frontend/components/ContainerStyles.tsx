@@ -48,11 +48,10 @@ const ContainerStyles = StyleSheet.create({
     marginBottom: 20,
   },
    titleImage: {
-    width: '100%',
-    height: '100%',
-    padding: 40,
-    borderRadius: 25,
-    //marginTop: 20,
+     width: '100%',
+    height: 200,
+    padding: 5,
+    borderRadius: 10,
     position: 'static',
     borderWidth: 2,
     borderColor: '#560324'

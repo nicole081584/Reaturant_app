@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
     textAlign: 'right',
   },
   footer: {
-    marginTop: 150,
+    marginTop: 300,
   },
 });

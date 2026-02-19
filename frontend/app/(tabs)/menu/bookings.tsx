@@ -1,8 +1,9 @@
 // app/(tabs)/menu/bookings.tsx
-import { StyleSheet, TextInput, Pressable, Modal, ActivityIndicator, ImageBackground } from 'react-native';
+import { StyleSheet, TextInput, Pressable, Modal, ActivityIndicator, ImageBackground} from 'react-native';
 import { Image } from 'expo-image';
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { getBookingSlots, makeBooking } from '@/libraries/backendService';
 import BookingCalendar from '@/libraries/bookingCalender';
@@ -120,14 +121,14 @@ const handleDateSelected = async (selectedDate: string) => {
   }
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-      headerImage={
-        <Image
-                source={require('@/assets/images/bookings.jpg')}
-                style={ContainerStyles.titleImage}
-              />
-      }>
+
+     <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+      <ParallaxScrollView>
+       
+          <Image
+            source={require('@/assets/images/bookings.jpg')}
+            style={ContainerStyles.titleImage}
+            />
 
       { stage == "makeBooking" && //stage make a booking
     
@@ -295,5 +296,6 @@ const handleDateSelected = async (selectedDate: string) => {
 
       <Footer />
     </ParallaxScrollView>
+    </SafeAreaView>
   );
 }

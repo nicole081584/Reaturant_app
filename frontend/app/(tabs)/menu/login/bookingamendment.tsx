@@ -2,6 +2,7 @@
 import { useRouter,useLocalSearchParams } from 'expo-router';
 import { Image, TextInput, Pressable } from 'react-native';
 import React, { useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { getBooking, makeBooking, getBookingSlots } from '@/libraries/backendService';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -41,15 +42,14 @@ export default function AdminScreen() {
 
 
     return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-      headerImage={
-        <Image
-                source={require('@/assets/images/Login.jpg')}
-                style={ContainerStyles.titleImage}
-              />
-      }>
-
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+    <ParallaxScrollView>
+       
+          <Image
+            source={require('@/assets/images/Login.jpg')}
+            style={ContainerStyles.titleImage}
+            />
+            
     <ThemedView style={ContainerStyles.titleContainer}>
         <ThemedText type="title">Amend your Booking</ThemedText>
     </ThemedView>
@@ -130,5 +130,6 @@ export default function AdminScreen() {
 
     <Footer />
     </ParallaxScrollView>
+    </SafeAreaView>
 
     )}

@@ -6,6 +6,7 @@ import { Picker } from '@react-native-picker/picker';
 import QRCode from 'react-native-qrcode-svg';
 import * as Print from 'expo-print';
 import * as Sharing from 'expo-sharing';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -138,14 +139,14 @@ const options = [];
   return (
     
     
-      <ParallaxScrollView
-        headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-        headerImage={
+      <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+        
+      <ParallaxScrollView>
+       
           <Image
             source={require('@/assets/images/Vouchers.jpg')}
             style={ContainerStyles.titleImage}
             />
-        }>
 
       { stage == "orderVoucher" && //stage to order the voucher
     
@@ -285,6 +286,8 @@ const options = [];
       <Footer />
 
       </ParallaxScrollView>
+      </SafeAreaView>
+
   );
 }
 

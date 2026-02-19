@@ -2,6 +2,7 @@
 import { Linking, StyleSheet, Pressable, Platform } from 'react-native';
 import { Image } from 'expo-image';
 import MapView, { Marker } from 'react-native-maps';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
@@ -55,14 +56,15 @@ const longitude =-6.3867474;
   
   // Returns the Contact screen view
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-      headerImage={
-        <Image
-              source={require('@/assets/images/Contacts.jpg')}
-              style={ContainerStyles.titleImage}
-                      />
-      }>
+    
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+    <ParallaxScrollView>
+       
+          <Image
+            source={require('@/assets/images/Contacts.jpg')}
+            style={ContainerStyles.titleImage}
+            />
+
       <ThemedView style={ContainerStyles.titleContainer}>
         <ThemedText type="title">Find Us</ThemedText>
       </ThemedView>
@@ -85,17 +87,20 @@ const longitude =-6.3867474;
         />
       </MapView>
       </ThemedView>
+      <ThemedText type="default">{address}</ThemedText>
 
       <ThemedView style={ContainerStyles.titleContainer}>
         <ThemedText type="title">Contact Us</ThemedText>
       </ThemedView>
 
+        <ThemedText type="default">Phone: {phoneNumber}</ThemedText>
       <ThemedView>
         <Pressable style={ButtonAndInputStyles.button} onPress={handleCallPress}>
           <ThemedText>Call Us</ThemedText>
         </Pressable>
       </ThemedView>
-      
+
+        <ThemedText type="default">Email: {emailAddress}</ThemedText>
       <ThemedView>
         <Pressable style={ButtonAndInputStyles.button} onPress={handleEmailPress}>
           <ThemedText>Email Us</ThemedText>
@@ -103,6 +108,7 @@ const longitude =-6.3867474;
       </ThemedView>
       <Footer />
     </ParallaxScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -112,4 +118,3 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
-

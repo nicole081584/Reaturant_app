@@ -2,6 +2,7 @@
 import { useRouter } from 'expo-router';
 import { Image, TextInput, Pressable } from 'react-native';
 import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { checkUserType } from '@/libraries/backendService';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -55,14 +56,14 @@ export default function LoginScreen() {
           } }
 
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-      headerImage={
-        <Image
-                source={require('@/assets/images/Login.jpg')}
-                style={ContainerStyles.titleImage}
-              />
-      }>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+    <ParallaxScrollView>
+       
+          <Image
+            source={require('@/assets/images/Login.jpg')}
+            style={ContainerStyles.titleImage}
+            />
+
       <ThemedView style={ContainerStyles.titleContainer}>
         <ThemedText type="title">Login</ThemedText>
       </ThemedView>
@@ -93,6 +94,7 @@ export default function LoginScreen() {
 
       <Footer />
     </ParallaxScrollView>
+    </SafeAreaView>
   );
 }
 

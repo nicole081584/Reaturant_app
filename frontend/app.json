@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "sintons_app",
+    "name": "Sintons App",
     "slug": "sintons_app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.sintons_app"
     },
     "web": {
       "bundler": "metro",

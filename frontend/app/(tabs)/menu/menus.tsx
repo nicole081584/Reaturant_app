@@ -1,5 +1,6 @@
 // app/(tabs)/menu/menus.tsx
 import { Image } from 'expo-image';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -11,15 +12,15 @@ import ContainerStyles from '@/components/ContainerStyles';
 
 export default function MenusScreen() {
 
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#560324', dark: '#560324' }}
-      headerImage={
-        <Image
-                source={require('@/assets/images/Cod.jpg')}
-                style={ContainerStyles.titleImage}
-              />
-      }>
+   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+    <ParallaxScrollView>
+       
+          <Image
+            source={require('@/assets/images/Cod.jpg')}
+            style={ContainerStyles.titleImage}
+            />  
+
       <ThemedView style={ContainerStyles.titleContainer}>
         <ThemedText type="title">Menus</ThemedText>
       </ThemedView>
@@ -99,9 +100,6 @@ export default function MenusScreen() {
       <Footer />
 
     </ParallaxScrollView>
-
-    
+    </SafeAreaView>    
   );
 }
-
-

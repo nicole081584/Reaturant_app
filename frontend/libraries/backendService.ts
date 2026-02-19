@@ -14,9 +14,9 @@ import { giftVoucher } from "./giftVoucher";
 import { booking } from "./booking";
 
 
-//const apibase = "http://192.168.4.39:3001/"; //Home
+const apibase = "http://192.168.4.39:3001/"; //Home
 //const apibase = "http://192.168.178.123:3001/"; //Anton
-const apibase = "http://192.168.1.23:3001/"; // Oma
+//const apibase = "http://192.168.1.23:3001/"; // Oma
 //change to server address once installed on a separat server
 
 /**

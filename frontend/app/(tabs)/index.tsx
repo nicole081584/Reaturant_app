@@ -11,16 +11,18 @@ export default function HomeScreen() {
   // Returns Home screen view
   return (
     
-  <SafeAreaView style={{ flex: 1, backgroundColor: '#560324'}}>
+  <SafeAreaView  accessible={false} style={{ flex: 1, backgroundColor: '#560324'} }>
     <ParallaxScrollView>
        
           <Image
             source={require('@/assets/images/sintons_house_logo.png')}
             style={ContainerStyles.titleImage}
+            accessible={true}
+            accessibilityLabel="Exterior view of the restaurant"
             />
             
       <ThemedView style={ContainerStyles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title" accessibilityRole="header">Welcome!</ThemedText>
       </ThemedView>
       <ThemedView style={ContainerStyles.stepContainer}>
         

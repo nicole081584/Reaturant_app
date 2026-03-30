@@ -19,10 +19,12 @@ export default function MenusScreen() {
           <Image
             source={require('@/assets/images/Cod.jpg')}
             style={ContainerStyles.titleImage}
+            accessible={true}
+            accessibilityLabel="Picture of a fish dish"
             />  
 
       <ThemedView style={ContainerStyles.titleContainer}>
-        <ThemedText type="title">Menus</ThemedText>
+        <ThemedText type="title" accessibilityRole="header">Menus</ThemedText>
       </ThemedView>
       <Collapsible title="Breakfast">
         <ThemedText>

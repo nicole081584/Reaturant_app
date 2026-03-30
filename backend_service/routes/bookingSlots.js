@@ -16,7 +16,7 @@ router.get('/', async (request, response) => {
     request.query.date,
     request.query.numberOfGuests
   );
-  //console.log("Response that gets passed back to app from booking slots: "+ result); //for debugging
+  console.log("Response that gets passed back to app from booking slots: "+ result); //for debugging
   response.send(result);
 });
 
